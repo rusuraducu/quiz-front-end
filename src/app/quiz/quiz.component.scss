@@ -1,0 +1,200 @@
+
+@import 'main.scss';
+
+/*Layout Dimensions*/
+$headerLayoutHeight : 18%;
+$questionLayoutHeight : 37%;
+$answersLayoutHeight : 37%;
+/*Layout Dimensions*/
+
+
+.Header {
+    height: $headerLayoutHeight;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+
+    .drop-shadow {
+        filter: drop-shadow(10px 10px 10px $darkColor3);
+        }
+
+    .TitleAndButtons {
+        background-color: $darkColor2;
+
+        background-image: linear-gradient(to bottom, #313743, #38404a, #404a51, #4a5358, #545c5f);
+        flex: 3;
+
+        .Buttons {
+            padding: 10 10 0 0;
+            flex: 1;
+
+            .closeButton {
+                font-size: 35px;
+                float: right;
+            }
+        }
+
+        .Title {
+            font-family: "Times", serif;
+            text-align: center;
+            color: $yellow;
+            font-size: $titleFontSize;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            display: inline-block;
+            width: 100%;
+            flex-grow: 3;
+        }
+    }
+
+    .Board {
+        z-index: 1;
+        width: 70%;
+        flex-direction: row;
+        background-color: $darkColor2;
+        margin: auto;
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex: 1;
+        box-shadow:  0 8px 8px -4px $darkColor2, 8 0px 0px -4px $darkColor2;
+
+        .scoreBoard {
+            flex: 1;
+            border-right: 1px solid #536f74;
+        }
+
+        .timeBoard {
+            flex: 1;
+        }
+    }
+}
+
+.Question {
+    height: $questionLayoutHeight;
+
+    .questionBody {
+        width: 100%;
+        height: 100%;
+        font-family: $timesNewRoman;
+        color: $greyColor;
+        font-size: 18px;
+        letter-spacing: 2px;
+        line-height: 1.8;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+}
+
+.Answers{
+    height: $answersLayoutHeight;
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .answer {
+        display: block;
+        width: 100%;
+        padding: 8px 0px 8px 0px;
+        background-color: $darkColor3;
+        font-family: $timesNewRoman;
+        color: $greyColor;
+        font-size: 20px;
+    }
+
+    .btn-primary {
+        border-color: #2e2f31;
+    }
+    
+    .btn-success,
+    .btn-success:hover,
+    .btn-success:active,
+    .btn-success:visited,
+    .btn-success:focus {
+        background-color: $correctAnswer;
+        box-shadow: 0 0 0 0.00rem #32B768;
+    }
+    
+    .btn-primary:hover,
+    .btn-primary:active,
+    .btn-primary:visited,
+    .btn-primary:focus {
+        background-color: $chosenAnswer;
+        box-shadow: 0 0 0 0.05rem $chosenAnswer;
+    }
+    
+    
+    .btn-secondary:active,
+    .btn-secondary:visited,
+    .btn-secondary:focus {
+        background-color: $wrongAnswer;
+        box-shadow: 0 0 0 0rem $wrongAnswer;
+    }
+    
+}
+
+.Footer{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+
+    .ProgressBar {
+        content: "";
+        width: 100%;
+        height: 5px;
+        display: flex;
+        flex-direction: row;
+
+        .correctAnswer {
+            content: "";
+            width: 10%;
+            height: 5px;
+            background-color: $correctAnswer;
+            border-right: 2px solid #474d58;
+        }
+        
+        .wrongAnswer {
+            content: "";
+            width: 10%;
+            height: 5px;
+            background-color: $wrongAnswer;
+            border-right: 2px solid #474d58;
+        }
+
+        .currentQuesntion {
+            content: "";
+            width: 10%;
+            height: 5px;
+            background-color: $chosenAnswer;
+            border-right: 2px solid #474d58;
+        }
+
+        .empty {
+            content: "";
+            width: 10%;
+            height: 5px;
+            background-color: $darkColor3;
+            border-right: 2px solid #474d58;
+        }
+    }
+    
+  
+    .QuiestionTraker {
+        text-align: center;
+        width: 100%;
+        color: #EFEEB4;
+        font-size: 15px;
+        letter-spacing: 2px;
+        font-family: "Times", serif;
+    }
+}
+
+.Bold{
+    font-weight: bold;
+}
